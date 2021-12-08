@@ -22,6 +22,8 @@
     # any module necessary for this one to work correctly
     'depends': ['account_followup'],
 
+    'license': 'LGPL-3',
+
     # always loaded
     'data': [
         'views/res_partner_views.xml',
