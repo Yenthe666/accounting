@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record model="ir.ui.view" id="res_partner_view_form_followup_exclude_partners">
-        <field name="name">res.partner.account.diot.form.oml</field>
+        <field name="name">res.partner.account.followup.exclude.partners</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="account.view_partner_property_form"/>
         <field name="arch" type="xml">
