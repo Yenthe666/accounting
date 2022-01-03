@@ -13,7 +13,7 @@ class ResPartner(models.Model):
 
     @api.onchange('followup_enabled')
     def _onchange_followup_enabled(self):
-        self._compute_for_followup()
+        self.sudo()._compute_for_followup()
 
     def _compute_for_followup(self):
         """
