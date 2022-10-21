@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_down_payment" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.down.payment</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="65"/>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='down_payments']" position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="deposit_default_percentage">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Down payment percentage</span>
+                        <div class="text-muted">
+                            The percentage that will be invoiced as down payments automatically.
+                        </div>
+                        <div class="text-muted">
+                            <field name="deposit_default_percentage"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+        </record>
+    </data>
+</odoo>

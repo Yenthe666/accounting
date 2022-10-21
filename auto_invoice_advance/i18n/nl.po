@@ -1,0 +1,59 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* auto_invoice_advance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-21 09:22+0000\n"
+"PO-Revision-Date: 2022-10-21 09:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: auto_invoice_advance
+#: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
+msgid "<span class=\"o_form_label\">Down payment percentage</span>"
+msgstr "<span class=\"o_form_label\">Automatische aanbetaling percentage</span>"
+
+#. module: auto_invoice_advance
+#: model:ir.model,name:auto_invoice_advance.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuratie instellingen"
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,field_description:auto_invoice_advance.field_res_config_settings__deposit_default_percentage
+msgid "Default deposit percentage"
+msgstr "Standaard aanbetaling percentage"
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,help:auto_invoice_advance.field_res_config_settings__deposit_default_percentage
+msgid "Default percentage for automatic deposits"
+msgstr "Standaard percentage voor automatische aanbetalingen"
+
+#. module: auto_invoice_advance
+#: model:ir.actions.server,name:auto_invoice_advance.cron_create_advance_invoices_ir_actions_server
+#: model:ir.cron,cron_name:auto_invoice_advance.cron_create_advance_invoices
+#: model:ir.cron,name:auto_invoice_advance.cron_create_advance_invoices
+msgid "Sale: Create advance invoices"
+msgstr "Verkoop: Genereer automatische aanbetalingen"
+
+#. module: auto_invoice_advance
+#: model:ir.model,name:auto_invoice_advance.model_sale_order
+msgid "Sales Order"
+msgstr "Verkooporder"
+
+#. module: auto_invoice_advance
+#: code:addons/auto_invoice_advance/models/res_config_settings.py:0
+#, python-format
+msgid "The deposit amount must be between 0 and 100."
+msgstr "Het aanbetaling percentage moet tussen 0 en 100 liggen."
+
+#. module: auto_invoice_advance
+#: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
+msgid "The percentage that will be invoiced as down payments automatically."
+msgstr "Het percentage waarvoor automatisch een aanbetaling zal gebeuren."
