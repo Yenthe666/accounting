@@ -20,6 +20,49 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12 col-lg-6 o_setting_box" id="auto_confirm_down_payment">
+                    <div class="o_setting_left_pane">
+                        <div class="text-muted">
+                            <field name="auto_confirm_down_payment"/>
+                        </div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Automatically confirm down payments</span>
+                        <div class="text-muted">
+                            If set to true, the action will confirm the auto generated down payments.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box" id="auto_email_down_payment">
+                    <div class="o_setting_left_pane">
+                        <div class="text-muted">
+                            <field name="auto_email_down_payment"
+                                   attrs="{'readonly': [('auto_confirm_down_payment', '=', False)]}"/>
+                        </div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Automatically send down payment email to customer</span>
+                        <div class="text-muted">
+                            If set to true, the action will send out the down payment invoice to the customer when available.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box" id="auto_email_template_id"
+                     attrs="{'invisible': [('auto_email_down_payment', '=', False)]}">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Down payment email</span>
+                        <div class="text-muted">
+                            Email template used to send out down payment invoices to customers.
+                        </div>
+                        <div class="text-muted">
+                            <field name="auto_email_template_id"
+                                   attrs="{'required': [('auto_email_down_payment', '=', True)],
+                                   'readonly': [('auto_email_down_payment', '=', False)]}"
+                            />
+                        </div>
+                    </div>
+                </div>
             </xpath>
         </field>
         </record>

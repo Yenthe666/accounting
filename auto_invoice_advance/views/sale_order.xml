@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_form_view_down_payment_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="priority" eval="65"/>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="payment_term_id" position="after">
+                    <field name="down_payment_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
