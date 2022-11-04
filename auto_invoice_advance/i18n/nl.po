@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-21 09:22+0000\n"
-"PO-Revision-Date: 2022-10-21 09:22+0000\n"
+"POT-Creation-Date: 2022-11-04 08:26+0000\n"
+"PO-Revision-Date: 2022-11-04 08:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,8 +17,41 @@ msgstr ""
 
 #. module: auto_invoice_advance
 #: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
+msgid "<span class=\"o_form_label\">Automatically confirm down payments</span>"
+msgstr "<span class=\"o_form_label\">Voorschotfacturen automatisch bevestigen</span>"
+
+#. module: auto_invoice_advance
+#: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
+msgid ""
+"<span class=\"o_form_label\">Automatically send down payment email to "
+"customer</span>"
+msgstr "<span class=\"o_form_label\">Verstuur voorschotfactuur automatisch naar "
+"klant</span>"
+
+#. module: auto_invoice_advance
+#: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
+msgid "<span class=\"o_form_label\">Down payment email</span>"
+msgstr "<span class=\"o_form_label\">E-mailsjabloon voorschotfacturen</span>"
+
+#. module: auto_invoice_advance
+#: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
 msgid "<span class=\"o_form_label\">Down payment percentage</span>"
-msgstr "<span class=\"o_form_label\">Automatische aanbetaling percentage</span>"
+msgstr "<span class=\"o_form_label\">Percentage automatische voorschotfactuur</span>"
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,help:auto_invoice_advance.field_sale_order__down_payment_id
+msgid "Auto generated down payment invoice"
+msgstr "Automatisch gegenereerde voorschotfactuur"
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,field_description:auto_invoice_advance.field_res_config_settings__auto_confirm_down_payment
+msgid "Automatically confirm down payments"
+msgstr "Automatisch voorschotfactuur bevestigen"
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,field_description:auto_invoice_advance.field_res_config_settings__auto_email_down_payment
+msgid "Automatically send down payment email to customer"
+msgstr "Voorschotfactuur automatisch e-mailen naar klant"
 
 #. module: auto_invoice_advance
 #: model:ir.model,name:auto_invoice_advance.model_res_config_settings
@@ -36,6 +69,54 @@ msgid "Default percentage for automatic deposits"
 msgstr "Standaard percentage voor automatische aanbetalingen"
 
 #. module: auto_invoice_advance
+#: model:ir.model.fields,field_description:auto_invoice_advance.field_res_config_settings__auto_email_template_id
+msgid "Down payment email"
+msgstr "E-mailsjabloon voorschotfactuur"
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,field_description:auto_invoice_advance.field_sale_order__down_payment_id
+msgid "Down payment invoice"
+msgstr "Voorschotfactuur"
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,help:auto_invoice_advance.field_res_config_settings__auto_email_template_id
+msgid "Email template used to send out down payment invoices to customers"
+msgstr "E-mailsjabloon gebruikt om voorschotfacturen te e-mailen naar klanten"
+
+#. module: auto_invoice_advance
+#: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
+msgid "Email template used to send out down payment invoices to customers."
+msgstr "E-mailsjabloon dat gebruikt wordt om voorschotfacturen te e-mailen naar klanten."
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,help:auto_invoice_advance.field_res_config_settings__auto_confirm_down_payment
+#: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
+msgid ""
+"If set to true, the action will confirm the auto generated down payments."
+msgstr "Indien aangevinkt zal de voorschotfactuur automatisch bevestigd worden."
+
+#. module: auto_invoice_advance
+#: model:ir.model.fields,help:auto_invoice_advance.field_res_config_settings__auto_email_down_payment
+msgid ""
+"If set to true, the action will send out the down payment invoice to the "
+"customer when available"
+msgstr "Indien aangevinkt zal de actie automatisch de voorschotfacturen mailen "
+"naar de klant."
+
+#. module: auto_invoice_advance
+#: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
+msgid ""
+"If set to true, the action will send out the down payment invoice to the "
+"customer when available."
+msgstr "Indien aangevinkt zal de actie automatisch de voorschotfacturen automatisch mailen "
+"naar de klant."
+
+#. module: auto_invoice_advance
+#: model:ir.model,name:auto_invoice_advance.model_account_move
+msgid "Journal Entry"
+msgstr "Boeking"
+
+#. module: auto_invoice_advance
 #: model:ir.actions.server,name:auto_invoice_advance.cron_create_advance_invoices_ir_actions_server
 #: model:ir.cron,cron_name:auto_invoice_advance.cron_create_advance_invoices
 #: model:ir.cron,name:auto_invoice_advance.cron_create_advance_invoices
@@ -43,15 +124,14 @@ msgid "Sale: Create advance invoices"
 msgstr "Verkoop: Genereer automatische aanbetalingen"
 
 #. module: auto_invoice_advance
+#: model:ir.model,name:auto_invoice_advance.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Verkoop vooruibetaling factuur"
+
+#. module: auto_invoice_advance
 #: model:ir.model,name:auto_invoice_advance.model_sale_order
 msgid "Sales Order"
 msgstr "Verkooporder"
-
-#. module: auto_invoice_advance
-#: code:addons/auto_invoice_advance/models/res_config_settings.py:0
-#, python-format
-msgid "The deposit amount must be between 0 and 100."
-msgstr "Het aanbetaling percentage moet tussen 0 en 100 liggen."
 
 #. module: auto_invoice_advance
 #: model_terms:ir.ui.view,arch_db:auto_invoice_advance.res_config_settings_view_down_payment
