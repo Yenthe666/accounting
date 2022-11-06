@@ -27,7 +27,7 @@ class SaleOrder(models.Model):
         _logger.info(f"Creating {len(orders)} advance invoices for sale.orders: {orders.ids}")
 
         # Get the configurations
-        percentage_amount = self.env['ir.config_parameter'].sudo().get_param('sale.deposit_default_percentage')
+        percentage_amount = float(self.env['ir.config_parameter'].sudo().get_param('sale.deposit_default_percentage'))
         confirm_down_payment = self.env['ir.config_parameter'].sudo().get_param('sale.auto_confirm_down_payment')
         do_send_email = self.env['ir.config_parameter'].sudo().get_param('sale.auto_email_down_payment')
 
@@ -98,10 +98,13 @@ class SaleOrder(models.Model):
         # We will only allow the automatic confirming of invoices with one tax
         deposit_taxes_id = self._try_get_tax_id(order_id)
 
+        # Calculate the down payment amount.
+        fixed_amount = self._calculate_down_payment_amount(order_id, percentage_amount)
+
         return {
             'sale_order_ids': order_id,
-            'advance_payment_method': 'percentage',
-            'amount': percentage_amount,
+            'advance_payment_method': 'fixed',
+            'fixed_amount': fixed_amount,
             'deposit_taxes_id': deposit_taxes_id,
         }
 
@@ -119,3 +122,11 @@ class SaleOrder(models.Model):
             if order_line.tax_id not in tax_ids:
                 tax_ids.append(order_line.tax_id)
         return tax_ids[0] if len(tax_ids) == 1 else None
+
+    def _calculate_down_payment_amount(self, order_id, percentage_amount):
+        """
+            Calculate the down payment amount.
+            As some sale orders have different tax amounts, we want to use the untaxed total amount of the sale
+            as base.
+        """
+        return (order_id.amount_untaxed / 100) * percentage_amount
