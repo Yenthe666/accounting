@@ -7,9 +7,9 @@
             <field name="priority" eval="65"/>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <field name="payment_term_id" position="after">
+                <xpath expr="//group[@name='sale_info']/field[last()]" position="after">
                     <field name="down_payment_id"/>
-                </field>
+                </xpath>
             </field>
         </record>
     </data>
