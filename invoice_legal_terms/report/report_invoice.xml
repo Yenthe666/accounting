@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document_inherit_invoice_legal_terms" inherit_id="account.report_invoice_document">
+        <div name="comment" position="after">
+            <t t-foreach="o.invoice_line_ids.tax_ids" t-as="tax">
+                <p t-raw="tax.invoice_terms"/>
+            </t>
+        </div>
+    </template>
+</odoo>
