@@ -27,7 +27,6 @@
     # always loaded
     'data': [
         'views/account_tax_views.xml',
-
         'report/report_invoice.xml',
     ],
 }

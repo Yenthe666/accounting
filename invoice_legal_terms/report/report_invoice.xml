@@ -5,7 +5,6 @@
             <t t-foreach="o.invoice_line_ids.tax_ids" t-as="tax">
                 <p t-raw="tax.invoice_terms"/>
             </t>
-            <p>Test</p>
         </p>
     </template>
 </odoo>
