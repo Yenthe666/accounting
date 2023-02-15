@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_tax_form_inherit_invoice_legal_terms">
+        <field name="name">account.tax.form.inherit.invoice.legal.terms</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='advanced_options']" position="inside">
+                <group>
+                    <field name="invoice_terms"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
